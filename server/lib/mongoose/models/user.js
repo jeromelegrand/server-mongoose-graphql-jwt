@@ -7,7 +7,7 @@ module.exports = mongoose.model(
     {
         lastName: String,
         firstName: String,
-        email: String,
+        email: {type: String, required: true, trim: true, unique: true},
         password: String,
         refreshToken: RefreshTokenSchema,
     },

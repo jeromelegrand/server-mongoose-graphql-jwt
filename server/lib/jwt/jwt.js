@@ -20,8 +20,8 @@ const publicKey = fs.readFileSync(path.resolve('lib/jwt/keys/jwtRS512.key.pub'))
 
 
 const sign = (user) => {
-    const {email, firstName, lastName} = user;
-    const payload = {email, firstName, lastName};
+    const {id, email, firstName, lastName} = user;
+    const payload = {id, email, firstName, lastName};
 
     const options = {
         algorithm: ALGORITHM,

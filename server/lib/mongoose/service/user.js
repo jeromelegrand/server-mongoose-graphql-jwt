@@ -21,7 +21,6 @@ const UserService = {
         // hash user password
         user.password = await bcrypt.hash(user.password, 10);
         return await new User(user).save();
-
     },
     userExist: async email => !!(await User.findOne({email})),
     login: async (email, password) => {
@@ -31,10 +30,9 @@ const UserService = {
             // check if password is ok
             const match = await bcrypt.compare(password, user.password);
             if (match) {
-                const {email, firstName, lastName} = user;
 
                 // get token
-                const token = sign({email, firstName, lastName});
+                const token = sign(user);
 
                 // make a new refresh token
                 const refresh = await UserService.updateRefresh(user);
@@ -69,7 +67,10 @@ const UserService = {
                             const newToken = await verifyRefreshToken(token, refresh);
                             if (newToken) {
                                 // auth success with refresh token
-                                res.set('x-new-token', newToken);
+                                res.set({
+                                    'Access-Control-Expose-Headers': 'x-new-token',
+                                    'x-new-token': newToken,
+                                });
                                 return;
                             }
                         }

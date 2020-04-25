@@ -1,0 +1,4 @@
+lib/jwt/keys/*
+!lib/jwt/keys/.gitkeep
+node_modules
+.env

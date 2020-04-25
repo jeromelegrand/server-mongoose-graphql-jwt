@@ -1,27 +1,19 @@
 {
-  "name": "server",
+  "name": "server-mongoose-graphql-jwt",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server/app.js",
   "scripts": {
-    "serve": "nodemon app.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeromelegrand/server-mongoose-graphql-jwt.git"
+  },
+  "author": "Jérôme LEGRAND",
   "license": "ISC",
-  "dependencies": {
-    "@types/express": "^4.17.6",
-    "@types/mongoose": "^5.7.12",
-    "bcrypt": "^4.0.1",
-    "body-parser": "^1.19.0",
-    "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "express-graphql": "^0.9.0",
-    "graphql": "^15.0.0",
-    "jsonwebtoken": "^8.5.1",
-    "moment": "^2.24.0",
-    "mongoose": "^5.9.10",
-    "rand-token": "^1.0.1"
-  }
+  "bugs": {
+    "url": "https://github.com/jeromelegrand/server-mongoose-graphql-jwt/issues"
+  },
+  "homepage": "https://github.com/jeromelegrand/server-mongoose-graphql-jwt#readme"
 }
